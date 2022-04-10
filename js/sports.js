@@ -28,12 +28,10 @@ document.getElementById('search-button').addEventListener('click', () => {
         const inputResult = inputValue.value;
         inputValue.value = '';
         if (inputResult == '') {
-            // console.log('Please, Search a name !!');
             displayError("Please, Enter a Team name!!");
         }
         else {
             const url = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${inputResult}`;
-            // console.log(url);
             const res = await fetch(url);
             const data = await res.json();
             showResult(data);
